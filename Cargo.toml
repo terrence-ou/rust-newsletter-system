@@ -11,6 +11,7 @@ path = "src/main.rs"
 name = "rust-newsletter-system"
 
 [dependencies]
+config = "0.13"
 actix-web = "4"
 serde = { version = "1", features = ["derive"] }
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
