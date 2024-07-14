@@ -44,6 +44,11 @@ jobs:
         ports:
           - 5432:5432
     steps:
+      - name: Free up Port 5432
+        run: |
+          sudo lsof -i :5432
+          sudo fuser -k 5432/tcp
+
       # Downloads a copy of the code in your repository before running CI tests
       - name: Check out repository code
         # The uses keyword specifies that this step will run v3 of the actions/checkout action.
